@@ -22,65 +22,90 @@ namespace On_Demand_Car_Wash.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("On_Demand_Car_Wash.Model.AccountDetail", b =>
+            modelBuilder.Entity("On_Demand_Car_Wash.Model.Address", b =>
                 {
-                    b.Property<int>("AccountDetailId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountDetailId"));
-
-                    b.Property<string>("AccountName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("AccountNumber")
-                        .HasColumnType("float");
-
-                    b.Property<string>("BankName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IfscCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AccountDetailId");
-
-                    b.ToTable("AccountDetails");
-
-                    b.HasData(
-                        new
-                        {
-                            AccountDetailId = 1,
-                            AccountName = "Test",
-                            AccountNumber = 1234567891234567.0,
-                            BankName = "Test",
-                            IfscCode = "Test"
-                        });
-                });
-
-            modelBuilder.Entity("On_Demand_Car_Wash.Model.Customer", b =>
-                {
-                    b.Property<int>("CustomerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
-
-                    b.Property<int>("AccountDetailId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Pincode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustId");
+
+                    b.ToTable("Address");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "pune",
+                            Country = "India",
+                            CustAddress = "Colony",
+                            CustId = 1,
+                            Pincode = "263148",
+                            State = "Maharastra"
+                        });
+                });
+
+            modelBuilder.Entity("On_Demand_Car_Wash.Model.Admin", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
+
+                    b.Property<string>("AdminEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AdminName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AdminPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AdminId");
+
+                    b.ToTable("Admins");
+                });
+
+            modelBuilder.Entity("On_Demand_Car_Wash.Model.Car", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Model")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -88,144 +113,80 @@ namespace On_Demand_Car_Wash.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PaymentId")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<long>("Phone")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ServiceId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WasherId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("WashingDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("CustomerId");
-
-                    b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            CustomerId = 1,
-                            AccountDetailId = 1,
-                            Address = "123 hello",
-                            City = "pune",
-                            Email = "abc@gmail.com",
-                            Name = "test",
-                            OrderId = 1,
-                            Password = "abc12345678@",
-                            PaymentId = 1,
-                            Phone = 1234567891L,
-                            PostalCode = 123456,
-                            ServiceId = 1,
-                            WasherId = 1,
-                            WashingDate = new DateTime(2023, 5, 6, 22, 53, 14, 562, DateTimeKind.Local).AddTicks(7274)
-                        });
+                    b.ToTable("Cars");
                 });
 
             modelBuilder.Entity("On_Demand_Car_Wash.Model.Order", b =>
                 {
-                    b.Property<int>("OrderId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Address")
+                    b.Property<int?>("AddressId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CarId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Instructions")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
+                    b.Property<string>("IsScheduledLater")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CustomerId")
+                    b.Property<int?>("PackageId")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<int>("ServiceId")
-                        .HasColumnType("int");
+                    b.Property<string>("PaymentStatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ShudelingTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<decimal>("TotalCost")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("WasherId")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.HasKey("OrderId");
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("CustId");
+
+                    b.HasIndex("PackageId");
 
                     b.ToTable("Orders");
-
-                    b.HasData(
-                        new
-                        {
-                            OrderId = 1,
-                            Address = "Test",
-                            Amount = 2000.0,
-                            CustomerId = 1,
-                            ServiceId = 1,
-                            ShudelingTime = new DateTime(2023, 5, 6, 22, 53, 14, 562, DateTimeKind.Local).AddTicks(7501),
-                            Status = false,
-                            WasherId = 1
-                        });
                 });
 
-            modelBuilder.Entity("On_Demand_Car_Wash.Model.Payment", b =>
+            modelBuilder.Entity("On_Demand_Car_Wash.Model.Package", b =>
                 {
-                    b.Property<int>("PaymentId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WasherId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PaymentId");
-
-                    b.ToTable("payments");
-
-                    b.HasData(
-                        new
-                        {
-                            PaymentId = 1,
-                            CustomerId = 1,
-                            OrderId = 1,
-                            WasherId = 1
-                        });
-                });
-
-            modelBuilder.Entity("On_Demand_Car_Wash.Model.Service", b =>
-                {
-                    b.Property<int>("ServiceId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ServiceId"));
-
-                    b.Property<double>("Amount")
-                        .HasColumnType("float");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -235,80 +196,104 @@ namespace On_Demand_Car_Wash.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ServiceId");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.ToTable("Services");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasData(
-                        new
-                        {
-                            ServiceId = 1,
-                            Amount = 2000.0,
-                            Description = "Test",
-                            Name = "Test"
-                        });
+                    b.HasKey("Id");
+
+                    b.ToTable("Packages");
                 });
 
-            modelBuilder.Entity("On_Demand_Car_Wash.Model.Washer", b =>
+            modelBuilder.Entity("On_Demand_Car_Wash.Model.UserDetails", b =>
                 {
-                    b.Property<int>("WasherId")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WasherId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
-                    b.Property<int>("AccountDetailId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Email")
+                    b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsApproved")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsAvilable")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
+                    b.Property<string>("UserEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PaymentId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("PhoneNumber")
-                        .HasColumnType("bigint");
+                    b.Property<byte[]>("UserPasswordHash")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
-                    b.Property<float>("Rating")
-                        .HasColumnType("real");
+                    b.Property<byte[]>("UserPasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
-                    b.HasKey("WasherId");
+                    b.Property<string>("UserPhnumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Washers");
+                    b.Property<string>("UserStatus")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasData(
-                        new
-                        {
-                            WasherId = 1,
-                            AccountDetailId = 0,
-                            Email = "Test@gmail.com",
-                            IsApproved = true,
-                            IsAvilable = true,
-                            Name = "Test",
-                            OrderId = 0,
-                            Password = "Abc12345678@",
-                            PaymentId = 0,
-                            PhoneNumber = 1234567891L,
-                            Rating = 2.7f
-                        });
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("On_Demand_Car_Wash.Model.Address", b =>
+                {
+                    b.HasOne("On_Demand_Car_Wash.Model.UserDetails", "UserDetails")
+                        .WithMany()
+                        .HasForeignKey("CustId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserDetails");
+                });
+
+            modelBuilder.Entity("On_Demand_Car_Wash.Model.Order", b =>
+                {
+                    b.HasOne("On_Demand_Car_Wash.Model.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("On_Demand_Car_Wash.Model.Car", "Car")
+                        .WithMany()
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("On_Demand_Car_Wash.Model.UserDetails", "UserDetails")
+                        .WithMany()
+                        .HasForeignKey("CustId");
+
+                    b.HasOne("On_Demand_Car_Wash.Model.Package", "Package")
+                        .WithMany()
+                        .HasForeignKey("PackageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
+
+                    b.Navigation("Car");
+
+                    b.Navigation("Package");
+
+                    b.Navigation("UserDetails");
                 });
 #pragma warning restore 612, 618
         }
