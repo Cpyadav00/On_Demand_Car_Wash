@@ -25,8 +25,9 @@ namespace On_Demand_Car_Wash.DataBaseContext
                     City="pune",
                     State="Maharastra",
                     Pincode="263148",
-                    Country="India"
-                   // CustId=1
+                    Country="India",
+                    CustId=1
+
                 }
                 );
 

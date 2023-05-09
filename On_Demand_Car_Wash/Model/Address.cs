@@ -20,6 +20,7 @@ namespace On_Demand_Car_Wash.Model
 
          public int CustId { get; set; }
 
+        [JsonIgnore]
         [ForeignKey("CustId")]
         public UserDetails UserDetails { get; set; }
     }
