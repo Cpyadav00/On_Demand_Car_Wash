@@ -6,11 +6,11 @@ namespace On_Demand_Car_Wash.Controllers
     [ApiController]
     public class WasherController:Controller
     {
-        IWasherRepository repository;
+         IWasherRepository repository;
 
         public WasherController(IWasherRepository _repository)
         {
-            repository = _repository;
+            this.repository = _repository;
 
         }
 
@@ -33,78 +33,78 @@ namespace On_Demand_Car_Wash.Controllers
 
         }
 
-        //For Updating Washer details using id
+        ////For Updating Washer details using id
 
-        [Route("Washer/GetById/{id}")]
-        [HttpGet]
-        public async Task<ActionResult<Washer>> GetById(int id)
-        {
-            try
-            {
-                var washer = await repository.WasherById(id);
-                return Ok(washer);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //[Route("Washer/GetById/{id}")]
+        //[HttpGet]
+        //public async Task<ActionResult<Washer>> GetById(int id)
+        //{
+        //    try
+        //    {
+        //        var washer = await repository.WasherById(id);
+        //        return Ok(washer);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
-        //For Adding new Washer details
+        ////For Adding new Washer details
 
-        [Route("Washer/Put/{id}")]
-        [HttpPost]
-        public async Task<ActionResult<Washer>> Put(int id, [FromBody] Washer obj)
-        {
-            try
-            {
-                var washer = await repository.UpdateWasher(id, obj);
-                return Ok(washer);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //[Route("Washer/Put/{id}")]
+        //[HttpPost]
+        //public async Task<ActionResult<Washer>> Put(int id, [FromBody] Washer obj)
+        //{
+        //    try
+        //    {
+        //        var washer = await repository.UpdateWasher(id, obj);
+        //        return Ok(washer);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
-        //For Adding new Washer details 
+        ////For Adding new Washer details 
 
-        [Route("Washer/Post")]
-        [HttpPost]
-        public async Task<ActionResult<Washer>> Post(Washer washer)
-        {
-            try
-            {
-                var cust = await repository.AddingNewWasher(washer);
-                return Ok(cust);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //[Route("Washer/Post")]
+        //[HttpPost]
+        //public async Task<ActionResult<Washer>> Post(Washer washer)
+        //{
+        //    try
+        //    {
+        //        var cust = await repository.AddingNewWasher(washer);
+        //        return Ok(cust);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
 
 
-        //For Deleting the Existing data Using id
+        ////For Deleting the Existing data Using id
 
-        [Route("Washer/Delete/{id}")]
-        [HttpGet]
-        public async Task<ActionResult<bool>> Delete(int id)
-        {
-            try
-            {
-                var washer = await repository.DeleteWasher(id);
-                if (washer)
-                    return Ok(true);
-                else
-                    return Ok(false);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //[Route("Washer/Delete/{id}")]
+        //[HttpGet]
+        //public async Task<ActionResult<bool>> Delete(int id)
+        //{
+        //    try
+        //    {
+        //        var washer = await repository.DeleteWasher(id);
+        //        if (washer)
+        //            return Ok(true);
+        //        else
+        //            return Ok(false);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
 
     }

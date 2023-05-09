@@ -12,7 +12,7 @@ namespace On_Demand_Car_Wash.Controllers
 
         public CustomerController(ICustomerRepository _repository)
         {
-            repository = _repository;
+            this.repository = _repository;
             
         }
 

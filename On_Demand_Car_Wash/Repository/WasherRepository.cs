@@ -35,7 +35,7 @@ namespace On_Demand_Car_Wash.Repository
         //For Updating Washer details using id
         public async Task<Washer> UpdateWasher(int id, Washer obj)
         {
-            Washer washer = await context.Washers.Where(a => a.WasherId == id).FirstOrDefaultAsync();
+            Washer washer = await context.Washers.Where(a => a.WasherId == id).SingleOrDefaultAsync();
             if (washer != null && obj != null)
             {
                 context.Washers.Update(obj);
