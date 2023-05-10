@@ -16,24 +16,6 @@ namespace On_Demand_Car_Wash.DataBaseContext
         public DbSet<Address> Address { get; set; }
         public DbSet<Order> Orders { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            modelBuilder.Entity<Address>().HasData(
-                new Address
-                {
-                    Id=1,
-                    CustAddress="Colony",
-                    City="pune",
-                    State="Maharastra",
-                    Pincode="263148",
-                    Country="India",
-                    CustId=1
-
-                }
-                );
-
-
-
-                }
 
     }
 }

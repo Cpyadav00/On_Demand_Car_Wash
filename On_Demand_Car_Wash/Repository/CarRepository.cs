@@ -81,7 +81,6 @@ namespace On_Demand_Car_Wash.Repository
                 car = _carDb.Cars.Find(id);
                 if (car != null)
                 {
-                    //package.Status = "In Active";
                     _carDb.Cars.Remove(car);
                     _carDb.SaveChanges();
                     result = "200";

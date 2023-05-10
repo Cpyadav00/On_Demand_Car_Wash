@@ -58,18 +58,6 @@ namespace On_Demand_Car_Wash.Migrations
                     b.HasIndex("CustId");
 
                     b.ToTable("Address");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "pune",
-                            Country = "India",
-                            CustAddress = "Colony",
-                            CustId = 1,
-                            Pincode = "263148",
-                            State = "Maharastra"
-                        });
                 });
 
             modelBuilder.Entity("On_Demand_Car_Wash.Model.Admin", b =>
@@ -120,6 +108,15 @@ namespace On_Demand_Car_Wash.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cars");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Model = "A1",
+                            Name = "Honda",
+                            Status = "Not Delivered"
+                        });
                 });
 
             modelBuilder.Entity("On_Demand_Car_Wash.Model.Order", b =>
