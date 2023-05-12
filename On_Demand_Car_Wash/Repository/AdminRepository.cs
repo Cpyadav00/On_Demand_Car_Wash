@@ -57,11 +57,17 @@ namespace On_Demand_Car_Wash.Repository
             }
             return result;
         }
-        public string UpdateAdmin(Admin admin)
+        public string UpdateAdmin(int id, Admin admin)
         {
             string result = string.Empty;
             try
             {
+                var obj = _adminDb.Admins.Find(id);
+                if (obj != null)
+                {
+                    result = "Id is not present in database";
+                    return result;
+                }
                 _adminDb.Entry(admin).State = EntityState.Modified;
                 _adminDb.SaveChanges();
                 result = "200";

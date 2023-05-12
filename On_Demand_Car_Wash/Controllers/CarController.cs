@@ -18,7 +18,7 @@ namespace On_Demand_Car_Wash.Controllers
         {
             return Ok(carService.GetAllCar());
         }
-        [HttpGet("GetCar")]
+        [HttpGet("GetCar/{id}")]
         public IActionResult GetCar(int id)
         {
             return Ok(carService.GetCar(id));
@@ -28,12 +28,12 @@ namespace On_Demand_Car_Wash.Controllers
         {
             return Ok(carService.AddCar(car));
         }
-        [HttpPut("UpdateCar")]
-        public IActionResult UpdateCar(Car car)
+        [HttpPut("UpdateCar/{id}")]
+        public IActionResult UpdateCar(int id, [FromBody]Car car)
         {
             return Ok(carService.UpdateCar(car));
         }
-        [HttpDelete("DeleteCar")]
+        [HttpDelete("DeleteCar/{id}")]
         public IActionResult DeleteCar(int id)
         {
             return Ok(carService.DeleteCar(id));

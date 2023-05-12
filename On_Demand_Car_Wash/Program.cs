@@ -20,6 +20,8 @@ builder.Services.AddDbContext<CarDbContext>(options => options.UseSqlServer(buil
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddScoped<IAddress, AddressRepository>();
+builder.Services.AddScoped<AddressService, AddressService>();
 
 builder.Services.AddScoped<IAdmin, AdminRepository>();
 builder.Services.AddScoped<AdminService, AdminService>();

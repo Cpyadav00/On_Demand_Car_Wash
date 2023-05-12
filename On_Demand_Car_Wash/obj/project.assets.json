@@ -3806,11 +3806,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chandra Prakash\\source\\repos\\On_Demand_Car_Wash\\On_Demand_Car_Wash\\On_Demand_Car_Wash.csproj",
+      "projectUniqueName": "E:\\On_Demand_Car_Wash_Project\\On_Demand_Car_Wash_API\\On_Demand_Car_Wash\\On_Demand_Car_Wash.csproj",
       "projectName": "On_Demand_Car_Wash",
-      "projectPath": "C:\\Users\\Chandra Prakash\\source\\repos\\On_Demand_Car_Wash\\On_Demand_Car_Wash\\On_Demand_Car_Wash.csproj",
+      "projectPath": "E:\\On_Demand_Car_Wash_Project\\On_Demand_Car_Wash_API\\On_Demand_Car_Wash\\On_Demand_Car_Wash.csproj",
       "packagesPath": "C:\\Users\\Chandra Prakash\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chandra Prakash\\source\\repos\\On_Demand_Car_Wash\\On_Demand_Car_Wash\\obj\\",
+      "outputPath": "E:\\On_Demand_Car_Wash_Project\\On_Demand_Car_Wash_API\\On_Demand_Car_Wash\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

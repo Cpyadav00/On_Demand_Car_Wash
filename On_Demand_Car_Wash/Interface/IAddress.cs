@@ -7,7 +7,7 @@ namespace On_Demand_Car_Wash.Interface
         List<Address> GetAllAddress();
         Address GetAddress(int id);
         public string AddAddress(Address address);
-        public string UpdateAddress(Address address);
+        public string UpdateAddress(int id,Address address);
         public string DeleteAddress(int id);
     }
 }

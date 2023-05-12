@@ -22,9 +22,9 @@ namespace On_Demand_Car_Wash.Services
         {
             return _IAdmin.AddAdmin(admin);
         }
-        public string UpdateAdmin(Admin admin)
+        public string UpdateAdmin(int id,Admin admin)
         {
-            return _IAdmin.UpdateAdmin(admin);
+            return _IAdmin.UpdateAdmin(id,admin);
         }
         public string DeleteAdmin(int id)
         {

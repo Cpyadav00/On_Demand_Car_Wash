@@ -18,7 +18,7 @@ namespace On_Demand_Car_Wash.Controllers
         {
             return Ok(adminService.GetAllAdmin());
         }
-        [HttpGet("GetAdmin")]
+        [HttpGet("GetAdmin/{id}")]
         public IActionResult GetAdmin(int id)
         {
             return Ok(adminService.GetAdmin(id));
@@ -28,12 +28,12 @@ namespace On_Demand_Car_Wash.Controllers
         {
             return Ok(adminService.AddAdmin(admin));
         }
-        [HttpPut("UpdateAdmin")]
-        public IActionResult UpdateAdmin(Admin admin)
+        [HttpPut("UpdateAdmin/{id}")]
+        public IActionResult UpdateAdmin(int id,[FromBody]Admin admin)
         {
             return Ok(adminService.UpdateAdmin(admin));
         }
-        [HttpDelete("DeleteAdmin")]
+        [HttpDelete("DeleteAdmin/{id}")]
         public IActionResult DeleteAdmin(int id)
         {
             return Ok(adminService.DeleteAdmin(id));

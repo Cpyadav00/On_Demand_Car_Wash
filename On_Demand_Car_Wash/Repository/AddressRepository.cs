@@ -48,6 +48,7 @@ namespace On_Demand_Car_Wash.Repository
             string result = string.Empty;
             try
             {
+              
                 _addressDb.Address.Add(address);
                 _addressDb.SaveChanges();
             }
@@ -57,11 +58,17 @@ namespace On_Demand_Car_Wash.Repository
             }
             return result;
         }
-        public string UpdateAddress(Address address)
+        public string UpdateAddress(int id, Address address)
         {
             string result = string.Empty;
             try
             {
+                var obj = _addressDb.Address.Find(id);
+                if (obj != null)
+                {
+                    result = "Id is not present in database";
+                    return result;
+                }
                 _addressDb.Entry(address).State = EntityState.Modified;
                 _addressDb.SaveChanges();
                 result = "200";

@@ -7,7 +7,7 @@ namespace On_Demand_Car_Wash.Interface
         List<Admin> GetAllAdmin();
         Admin GetAdmin(int id);
         public string AddAdmin(Admin admin);
-        public string UpdateAdmin(Admin admin);
+        public string UpdateAdmin(int id,Admin admin);
         public string DeleteAdmin(int id);
     }
 }

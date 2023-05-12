@@ -22,9 +22,9 @@ namespace On_Demand_Car_Wash.Services
         {
             return _IAddress.AddAddress(address);
         }
-        public string UpdateAddress(Address address)
+        public string UpdateAddress(int id, Address address)
         {
-            return _IAddress.UpdateAddress(address);
+            return _IAddress.UpdateAddress(id,address);
         }
         public string DeleteAddress(int id)
         {

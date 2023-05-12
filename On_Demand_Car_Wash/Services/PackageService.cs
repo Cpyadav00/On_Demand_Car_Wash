@@ -22,9 +22,9 @@ namespace On_Demand_Car_Wash.Services
         {
             return _IPackage.AddPackage(package);
         }
-        public string UpdatePackage(Package package)
+        public string UpdatePackage(int id,Package package)
         {
-            return _IPackage.UpdatePackage(package);
+            return _IPackage.UpdatePackage(id,package);
         }
         public string DeletePackage(int id)
         {

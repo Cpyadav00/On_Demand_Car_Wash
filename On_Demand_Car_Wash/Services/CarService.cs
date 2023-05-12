@@ -22,9 +22,9 @@ namespace On_Demand_Car_Wash.Services
         {
             return _ICar.AddCar(car);
         }
-        public string UpdateCar(Car car)
+        public string UpdateCar(int id,Car car)
         {
-            return _ICar.UpdateCar(car);
+            return _ICar.UpdateCar(id,car);
         }
         public string DeleteCar(int id)
         {

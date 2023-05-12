@@ -22,6 +22,7 @@ namespace On_Demand_Car_Wash.Repository
             catch (Exception ex) { }
             return cars;
         }
+
         public Car GetCar(int id)
         {
             Car car;

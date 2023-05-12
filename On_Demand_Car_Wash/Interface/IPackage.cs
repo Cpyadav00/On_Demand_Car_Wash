@@ -7,7 +7,7 @@ namespace On_Demand_Car_Wash.Interface
         List<Package> GetAllPackage();
         Package GetPackage(int id);
         public string AddPackage(Package package);
-        public string UpdatePackage(Package package);
+        public string UpdatePackage(int id,Package package);
         public string DeletePackage(int id);
     }
 }
