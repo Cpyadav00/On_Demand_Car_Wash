@@ -31,7 +31,7 @@ namespace On_Demand_Car_Wash.Controllers
         [HttpPut("UpdateAdmin/{id}")]
         public IActionResult UpdateAdmin(int id,[FromBody]Admin admin)
         {
-            return Ok(adminService.UpdateAdmin(admin));
+            return Ok(adminService.UpdateAdmin(id, admin));
         }
         [HttpDelete("DeleteAdmin/{id}")]
         public IActionResult DeleteAdmin(int id)

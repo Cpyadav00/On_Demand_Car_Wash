@@ -29,9 +29,9 @@ namespace On_Demand_Car_Wash.Controllers
             return Ok(carService.AddCar(car));
         }
         [HttpPut("UpdateCar/{id}")]
-        public IActionResult UpdateCar(int id, [FromBody]Car car)
+        public IActionResult UpdateCar(int id,[FromBody]Car car)
         {
-            return Ok(carService.UpdateCar(car));
+            return Ok(carService.UpdateCar(id, car));
         }
         [HttpDelete("DeleteCar/{id}")]
         public IActionResult DeleteCar(int id)

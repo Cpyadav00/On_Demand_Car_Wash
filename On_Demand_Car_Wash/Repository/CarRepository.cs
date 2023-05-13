@@ -58,12 +58,18 @@ namespace On_Demand_Car_Wash.Repository
             }
             return result;
         }
-        public string UpdateCar(Car car)
+        public string UpdateCar(int id, Car car)
         {
             string result = string.Empty;
             try
             {
-                _carDb.Entry(car).State = EntityState.Modified;
+                var obj = _carDb.Cars.AsNoTracking().SingleOrDefault((a=>a.Id==id));
+                if (obj == null)
+                {
+                    result = "Id is not present in database";
+                    return result;
+                }
+                _carDb.Cars.Update(car);
                 _carDb.SaveChanges();
                 result = "200";
             }

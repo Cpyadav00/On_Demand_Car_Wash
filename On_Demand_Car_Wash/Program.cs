@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
 using Nest;
 using On_Demand_Car_Wash.DataBaseContext;
+using On_Demand_Car_Wash.DTO;
 using On_Demand_Car_Wash.Interface;
 using On_Demand_Car_Wash.Model;
 using On_Demand_Car_Wash.Repository;
@@ -32,6 +33,24 @@ builder.Services.AddScoped<CarService, CarService>();
 builder.Services.AddScoped<IPackage, PackageRepository>();
 builder.Services.AddScoped<PackageService, PackageService>();
 
+builder.Services.AddScoped<IRepository<UserDetails, int>, UserRepository>();
+builder.Services.AddScoped<UserService, UserService>();
+
+builder.Services.AddScoped<IRegister<CreateUserDto, UserDetails>, RegisterRepository>();
+builder.Services.AddScoped<RegisterService, RegisterService>();
+
+builder.Services.AddScoped<IViewInvoice, ViewInvoiceRepository>();
+builder.Services.AddScoped<ViewInvoiceService, ViewInvoiceService>();
+
+builder.Services.AddScoped<IToken, TokenRepository>();
+
+builder.Services.AddScoped<ILogin<Login, int>, LoginRepository>();
+builder.Services.AddScoped<LoginService, LoginService>();
+
+builder.Services.AddScoped<IOrder, OrderRepository>();
+builder.Services.AddScoped<OrderService, OrderService>();
+
+
 
 builder.Services.AddSwaggerGen();
 
@@ -45,6 +64,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

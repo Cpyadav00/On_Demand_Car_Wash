@@ -638,6 +638,54 @@
           }
         }
       },
+      "Microsoft.SqlServer.Management.SqlParser/170.7.0": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "4.7.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.SqlServer.Management.SqlParser.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.SqlServer.Management.SqlParser.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net6.0/de/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0/es/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0/fr/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0/it/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0/ja/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0/ko/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0/pt-BR/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0/ru/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0/zh-Hans/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0/zh-Hant/Microsoft.SqlServer.Management.SqlParser.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
       "Microsoft.SqlServer.Server/1.0.0": {
         "type": "package",
         "compile": {
@@ -796,15 +844,17 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.CodeDom/4.4.0": {
+      "System.CodeDom/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/_._": {
+          "ref/netstandard2.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/System.CodeDom.dll": {}
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Configuration.ConfigurationManager/5.0.0": {
@@ -2214,6 +2264,60 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "Microsoft.SqlServer.Management.SqlParser/170.7.0": {
+      "sha512": "3zdcuW3BHty5yluxWubRYs+8PQCQyfEzjNtL0e/2guWSe6BzjqnEmhgR6Tov09wPZJ9RNCHGTGVwsqXT8Fqp7g==",
+      "type": "package",
+      "path": "microsoft.sqlserver.management.sqlparser/170.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "LICENSE.md",
+        "README.md",
+        "lib/net462/Microsoft.SqlServer.Management.SqlParser.dll",
+        "lib/net462/Microsoft.SqlServer.Management.SqlParser.pdb",
+        "lib/net462/Microsoft.SqlServer.Management.SqlParser.xml",
+        "lib/net462/de/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/es/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/fr/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/it/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/ja/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/ko/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/pt-BR/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/ru/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/zh-Hans/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net462/zh-Hant/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/Microsoft.SqlServer.Management.SqlParser.dll",
+        "lib/net6.0/Microsoft.SqlServer.Management.SqlParser.pdb",
+        "lib/net6.0/Microsoft.SqlServer.Management.SqlParser.xml",
+        "lib/net6.0/de/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/es/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/fr/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/it/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/ja/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/ko/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/pt-BR/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/ru/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/zh-Hans/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/net6.0/zh-Hant/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/Microsoft.SqlServer.Management.SqlParser.dll",
+        "lib/netstandard2.0/Microsoft.SqlServer.Management.SqlParser.pdb",
+        "lib/netstandard2.0/Microsoft.SqlServer.Management.SqlParser.xml",
+        "lib/netstandard2.0/de/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/es/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/fr/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/it/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/ja/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/ko/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/pt-BR/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/ru/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/zh-Hans/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "lib/netstandard2.0/zh-Hant/Microsoft.SqlServer.Management.SqlParser.resources.dll",
+        "microsoft.sqlserver.management.sqlparser.170.7.0.nupkg.sha512",
+        "microsoft.sqlserver.management.sqlparser.nuspec",
+        "nuspecicon.png"
+      ]
+    },
     "Microsoft.SqlServer.Server/1.0.0": {
       "sha512": "N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
       "type": "package",
@@ -2448,22 +2552,24 @@
         "version.txt"
       ]
     },
-    "System.CodeDom/4.4.0": {
-      "sha512": "2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
+    "System.CodeDom/4.7.0": {
+      "sha512": "Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
       "type": "package",
-      "path": "system.codedom/4.4.0",
+      "path": "system.codedom/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/System.CodeDom.dll",
+        "lib/net461/System.CodeDom.xml",
         "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
         "ref/net461/System.CodeDom.dll",
         "ref/net461/System.CodeDom.xml",
         "ref/netstandard2.0/System.CodeDom.dll",
         "ref/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.4.4.0.nupkg.sha512",
+        "system.codedom.4.7.0.nupkg.sha512",
         "system.codedom.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3795,6 +3901,7 @@
       "Microsoft.EntityFrameworkCore >= 7.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
+      "Microsoft.SqlServer.Management.SqlParser >= 170.7.0",
       "NEST >= 7.17.5",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -3857,6 +3964,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.5, )"
+          },
+          "Microsoft.SqlServer.Management.SqlParser": {
+            "target": "Package",
+            "version": "[170.7.0, )"
           },
           "NEST": {
             "target": "Package",

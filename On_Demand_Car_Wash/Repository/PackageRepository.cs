@@ -70,7 +70,7 @@ namespace On_Demand_Car_Wash.Repository
             try
             {
                 var obj = _packageDb.Packages.Find(id);
-                if (obj != null)
+                if (obj == null)
                 {
                     result = "Id is not present in database";
                     return result;

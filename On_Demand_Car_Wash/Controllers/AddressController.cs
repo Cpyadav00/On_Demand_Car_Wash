@@ -31,7 +31,7 @@ namespace On_Demand_Car_Wash.Controllers
         [HttpPut("UpdateAddress/{id}")]
         public IActionResult UpdateAddress(int id, [FromBody] Address address)
         {
-            return Ok(addressService.UpdateAddress(address));
+            return Ok(addressService.UpdateAddress(id,address));
         }
         [HttpDelete("DeleteAddress/{id}")]
         public IActionResult DeleteAddress(int id)

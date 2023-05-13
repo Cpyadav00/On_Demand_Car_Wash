@@ -34,7 +34,7 @@ namespace On_Demand_Car_Wash.Controllers
         [HttpPut("UpdatePackage/{id}")]
         public IActionResult UpdatePackage(int id,[FromBody]Package package)
         {
-            return Ok(packageService.UpdatePackage(package));
+            return Ok(packageService.UpdatePackage(id, package));
         }
         [HttpDelete("DeletePackage/{id}")]
         public IActionResult DeletePackage(int id)

@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[7.0.5, )"
             },
+            "Microsoft.SqlServer.Management.SqlParser": {
+              "target": "Package",
+              "version": "[170.7.0, )"
+            },
             "NEST": {
               "target": "Package",
               "version": "[7.17.5, )"

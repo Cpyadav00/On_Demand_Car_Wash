@@ -85,7 +85,7 @@ namespace On_Demand_Car_Wash.Repository
             try
             {
                 admin = _adminDb.Admins.Find(id);
-                if (admin != null)
+                if (admin == null)
                 {
                     //package.Status = "In Active";
                     _adminDb.Admins.Remove(admin);

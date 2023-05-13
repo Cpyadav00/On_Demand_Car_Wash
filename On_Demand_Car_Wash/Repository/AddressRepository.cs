@@ -28,7 +28,7 @@ namespace On_Demand_Car_Wash.Repository
             try
             {
                 address = _addressDb.Address.Find(id);
-                if (address != null)
+                if (address = null)
                 {
                     return address;
                 }
@@ -64,7 +64,7 @@ namespace On_Demand_Car_Wash.Repository
             try
             {
                 var obj = _addressDb.Address.Find(id);
-                if (obj != null)
+                if (obj == null)
                 {
                     result = "Id is not present in database";
                     return result;
